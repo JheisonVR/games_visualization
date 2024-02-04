@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Result } from "../interfaces/games-response";
+import { Result } from "../games/interfaces/games-response";
 import Link from "next/link";
 import { CiCalendarDate } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
@@ -28,9 +28,15 @@ export const GameCard = ({ id, name, background_image, released }: Result) => {
                 alt={name}
                 width={300}
                 height={300}
+                priority={false}
                 
             />
-          <p className="pt-2 text-lg font-semibold text-gray-50">{name} </p>
+            <Link
+                href={`/games/${id}`}
+                className="text-lg font-semibold text-gray-50 hover:text-lime-200 transition-all duration-300 ease-in-out hover:scale-105 transform hover:font-bold"
+            >
+                <p className="">{name} </p>
+            </Link>
         </div>
         <div className="border-b">
           <Link
@@ -51,7 +57,7 @@ export const GameCard = ({ id, name, background_image, released }: Result) => {
             className="px-4 py-2 hover:bg-gray-100 flex"
             href="/account/donations"
           >
-            <div className="text-gray-800">
+            <div className="text-red-600">
               <FaRegHeart size={25}/>
             </div>
             <div className="pl-3">

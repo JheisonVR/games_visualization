@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { GameResponse, Result } from "../interfaces/games-response"
+import { GameResponse, Result } from "../games/interfaces/games-response"
 import { GameCard } from "./GameCard"
 
 
