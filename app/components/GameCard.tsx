@@ -5,7 +5,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 
 
-export const GameCard = ({ id, name, background_image, released }: Result) => {
+export const GameCard = ({ id, slug, name, background_image, released }: Result) => {
   return (
     // <div key={id} classNameName="flex flex-col">
     //   <h2>{name}</h2>
@@ -32,7 +32,7 @@ export const GameCard = ({ id, name, background_image, released }: Result) => {
                 
             />
             <Link
-                href={`/games/${id}`}
+                href={`/games/${slug}`}
                 className="text-lg font-semibold text-gray-50 hover:text-lime-200 transition-all duration-300 ease-in-out hover:scale-105 transform hover:font-bold"
             >
                 <p className="">{name} </p>

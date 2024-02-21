@@ -5,13 +5,16 @@ import { notFound } from "next/navigation";
 
 const API_KEY = '808a24e3fa704791ac20f09380f91606'
 
-const getGames = async ( page_size=30 ) => {
-  const data:GameResponse = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=${page_size}`)
-   .then( res => res.json());
-   const games = data.results
-  //  throw notFound()
+const getGames = async ( page_size=40 ) => {
+  try{
+    const data:GameResponse = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=${page_size}`)
+     .then( res => res.json());
+     const games = data.results
+     return games;
 
-   return games;
+  } catch(error){
+    notFound(); 
+  }
 
 }
 
